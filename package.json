@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/SherlockZh/BiHu-BasedOnReact/issues"
   },
-  "homepage": "https://github.com/SherlockZh/BiHu-BasedOnReact#readme"
+  "homepage": "https://github.com/SherlockZh/BiHu-BasedOnReact#readme",
+  "dependencies": {
+    "create-react-app": "^2.1.1"
+  }
 }
