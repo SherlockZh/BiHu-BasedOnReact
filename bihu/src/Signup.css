@@ -1,0 +1,61 @@
+.Register-form{
+  display: flex;
+  flex-direction: column;
+  margin-left: 175px;
+}
+.bihulogo{
+  height: 95px;
+  width: 90px;
+  margin-left: 197px;
+  margin-bottom: 20px;
+  margin-top: 18px;
+}
+.slogan{
+  margin-left: 65px;
+  margin-top: 15px;
+  color: #0084ff;
+  font-size: 22px;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+}
+
+input{
+  margin-top: 10px;
+  height: 43px;
+  font-size: 14px;
+  border: none;
+  border-bottom: 2px solid red;
+  outline: none;
+}
+#signup-button{
+  margin-top: 10px;
+  height: 38px;
+  background-color: #0084ff;
+  color: #fff;
+  font-size: 25px;
+}
+
+.SignContainer{
+  display: flex;
+  height: 432px;
+  width: 504px;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+
+.root{
+  height: 1000px;
+  background-color: #b8e5f8;
+  background-image: url('./images/signup_backgroud.jpg');
+  background-repeat: no-repeat;
+  background-color: #b8e5f8;
+  background-size: cover;
+}
