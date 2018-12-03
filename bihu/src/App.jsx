@@ -195,6 +195,7 @@ class App extends Component {
           questionID = {this.state.questionID} 
           answers={this.state.answers}
           userID={this.state.userID}
+          handleClick = {this.handleClick} 
           />
         }
       </div>

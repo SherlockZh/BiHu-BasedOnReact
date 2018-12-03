@@ -111,8 +111,6 @@ app.post('/answer', (req, res) => {
 			AllQuestions[i].ansIDs.push(aid);
 		}
 	}
-	console.log(answers);
-	console.log(AllQuestions);
 })
 
 
@@ -126,8 +124,6 @@ app.post('/question', (req, res) => {
 			users[i].questionIDs.push(qid);
 		}
 	}
-	console.log(answers);
-	console.log(AllQuestions);
 })
 
 app.post('/signup/:username', (req, res) => {

@@ -8,11 +8,12 @@ class Answers extends Component {
       allQuestions: props.allQuestions,
       questionID: props.questionID,
 			answers: props.answers,
-			userID: props.userID,
+      userID: props.userID,
+      handleClick: props.handleClick,
 			hasAnswerBox: false,
 			tempAnswerText:''
     };
-		this.answerTheQuestion = this.answerTheQuestion.bind(this);
+    this.answerTheQuestion = this.answerTheQuestion.bind(this);
   }
 
   addAnswerClick(e) {
@@ -42,6 +43,8 @@ class Answers extends Component {
     return (
       <div className="question">
         <h1>{this.state.allQuestions[this.state.questionID].description}</h1>
+        <button className="return-to-QuestionPage" onClick={() => this.state.handleClick(-1)}
+>return to questions</button>
         <button className="Button-answer" onClick={this.answerTheQuestion}>
           Answer
         </button>

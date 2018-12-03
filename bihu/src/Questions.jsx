@@ -1,6 +1,5 @@
 import React from "react";
 import "./Questions.css";
-import QuestionsBox from './QuestionBox';
 
 const Questions = ({
   allQuestions, handleClick, users, updateQuestionTitle, updateQuestionDesc, sendQuestion}
