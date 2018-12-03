@@ -6,7 +6,8 @@ app.use(bodyParser.json());
 const PORT = 4000;
 
 const createUID = a();
-//const createQID = makeCounter();
+const createQID = b();
+const createAID = c();
 
 const log = console.log;
 
@@ -17,15 +18,15 @@ function a() {
 	};
 }
 
-const createQID = function () {
+function b() {
 	let count = 3;
 	return function () {
 		return count++;
 	};
 }
 
-const createAID = function () {
-	let count = 2;
+function c() {
+	let count = 3;
 	return function () {
 		return count++;
 	};
@@ -99,6 +100,19 @@ app.get('/users', (req, res) => {
 
 app.get('/answers', (req, res) => {
 	res.json(answers);
+})
+
+app.post('/answer', (req, res) => {
+	const {content, ansUserID, questionID} = req.body;
+	const aid = createAID();
+	answers.push({aid, ansUserID, content});
+	for(let i = 0; i < AllQuestions.length; i++){
+		if(AllQuestions[i].qid === questionID){
+			AllQuestions[i].ansIDs.push(aid);
+		}
+	}
+	console.log(answers);
+	console.log(AllQuestions);
 })
 
 app.post('/signup/:username', (req, res) => {

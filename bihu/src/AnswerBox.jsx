@@ -1,37 +1,44 @@
 import React, { Component } from "react";
 import "./AnswerBox.css";
 
+import { sendAnswerInfo } from "./services";
+
 class AnswerBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
       questionID: props.questionID,
       answers: props.answers,
-      value: ""
+      userID: props.userID,
+      tempAnswerText: ''
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.updateTempAnswerText = this.updateTempAnswerText.bind(this);
+    this.sendAnswer = this.sendAnswer.bind(this);
   }
 
-  handleChange(e) {
+  updateTempAnswerText(e) {
     this.setState({
-      value: e.target.value
+      tempAnswerText: e.target.value
     });
+  }
+
+  sendAnswer(){
+    sendAnswerInfo(this.state.tempAnswerText, this.state.userID, this.state.questionID);
+    alert('answer has been posted!');
   }
 
   render() {
     return (
-      <form>
-        <div>
-          <textarea
-            className="answerBox-textArea"
-            rows="8"
-            cols="100"
-            placeholder="Add your answer"
-            onChange={this.handleChange}
-          />
-        </div>
-        <button type="submit">Add</button>
-      </form>
+      <div>
+        <textarea
+          className="answerBox-textArea"
+          rows="8"
+          cols="100"
+          placeholder="Add your answer"
+          onChange={this.updateTempAnswerText}
+        />
+        <button onClick={this.sendAnswer}>Add</button>
+      </div>
     );
   }
 }

@@ -142,11 +142,21 @@ class App extends Component {
 
   render() {
     const isLoggedIn = !!this.state.user;
-
     const hasQuestionID = !(this.state.questionID === -1);
 
     return (
       <div className="App" >
+       {isLoggedIn || <Signup
+          username={this.state.tempUsername}
+          updateTempUsername={this.updateTempUsername}
+          password={this.state.tempPassword}
+          updateTempPassword={this.updateTempPassword}
+          executeSignup={this.executeSignup}
+          executeLogin={this.executeLogin}
+          loginDirectly={this.state.loginDirectly}
+          changeBtnText={this.changeBtnText}
+        />}
+
         <header className="App-header"></header>
         {isLoggedIn && <Header/>}
         
@@ -163,19 +173,9 @@ class App extends Component {
           allQuestions={this.state.allQuestions} 
           questionID = {this.state.questionID} 
           answers={this.state.answers}
+          userID={this.state.userID}
           />
         }
-
-        {isLoggedIn || <Signup
-          username={this.state.tempUsername}
-          updateTempUsername={this.updateTempUsername}
-          password={this.state.tempPassword}
-          updateTempPassword={this.updateTempPassword}
-          executeSignup={this.executeSignup}
-          executeLogin={this.executeLogin}
-          loginDirectly={this.state.loginDirectly}
-          changeBtnText={this.changeBtnText}
-        />}
       </div>
     );
   }

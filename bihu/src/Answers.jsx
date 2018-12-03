@@ -7,16 +7,17 @@ class Answers extends Component {
     this.state = {
       allQuestions: props.allQuestions,
       questionID: props.questionID,
-      answers: props.answers,
-      hasAnswerBox: false
+			answers: props.answers,
+			userID: props.userID,
+			hasAnswerBox: false,
+			tempAnswerText:''
     };
-    this.answerTheQuestion = this.answerTheQuestion.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
+		this.answerTheQuestion = this.answerTheQuestion.bind(this);
   }
 
-  handleChange(e) {
+  addAnswerClick(e) {
     this.setState({
-      value: e.target.value
+      tempAnswerText: e.target.value
     });
   }
 
@@ -24,7 +25,8 @@ class Answers extends Component {
     this.setState({
       hasAnswerBox: true
     });
-  }
+	}
+	
 
   render() {
     const answerList = this.state.allQuestions[this.state.questionID].ansIDs.map(
@@ -48,7 +50,8 @@ class Answers extends Component {
           <AnswerBox
             addAnswerClick={this.addAnswerClick}
             questionID={this.state.questionID}
-            answers={this.state.answers}
+						answers={this.state.answers}
+						userID={this.state.userID}
           />
         )}
       </div>

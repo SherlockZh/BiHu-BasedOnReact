@@ -1,5 +1,6 @@
 import React from "react";
 import "./Questions.css";
+import QuestionsBox from './QuestionBox';
 
 const Questions = ({allQuestions, handleClick, users}) => {
   const questionList = allQuestions.map(question => (
@@ -21,6 +22,7 @@ const Questions = ({allQuestions, handleClick, users}) => {
     <div className="question">
       <button>Add a question</button>
       {questionList}
+      {QuestionsBox}
     </div>
   );
 };
