@@ -8,7 +8,8 @@ import {
   sendUserPass,
   getQuestions,
   getAnswers,
-  getUsers
+  getUsers,
+  sendQuestionInfo
 } from './services';
 
 class App extends Component {
@@ -28,7 +29,10 @@ class App extends Component {
 
       allQuestions: [],
       users:[],
-      answers: []
+      answers: [],
+      questionTitle:'',
+      questionDesc:''
+
     };
     this.updateTempUsername = this.updateTempUsername.bind(this);
     this.updateTempPassword = this.updateTempPassword.bind(this);
@@ -41,6 +45,9 @@ class App extends Component {
     this.pollAnswers = this.pollAnswers.bind(this);
     this.pollUserInfo = this.pollUserInfo.bind(this);
     this.pollAll = this.pollAll.bind(this);
+    this.updateQuestionDesc = this.updateQuestionDesc.bind(this);
+    this.updateQuestionTitle = this.updateQuestionTitle.bind(this);
+    this.sendQuestion = this.sendQuestion.bind(this);
   }
 
   componentDidMount() {
@@ -134,10 +141,21 @@ class App extends Component {
     });
   }
 
-  updateQuestionText(e) {
+  updateQuestionTitle(e) {
     this.setState({
-      
+       questionTitle: e.target.value
     })
+  }
+
+  updateQuestionDesc(e) {
+    this.setState({
+       questionDesc: e.target.value
+    })
+  }
+
+  sendQuestion() {
+    sendQuestionInfo(this.state.userID, this.state.questionTitle, this.state.questionDesc);
+    alert('Question has been added!');
   }
 
   render() {
@@ -165,6 +183,9 @@ class App extends Component {
           allQuestions={this.state.allQuestions} 
           handleClick = {this.handleClick} 
           users = {this.state.users}
+          updateQuestionTitle = {this.updateQuestionTitle}
+          updateQuestionDesc = {this.updateQuestionDesc}
+          sendQuestion = {this.sendQuestion}
           />
         }
         

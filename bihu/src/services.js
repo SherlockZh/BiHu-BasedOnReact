@@ -36,6 +36,26 @@ export const sendAnswerInfo = (
 	});
 };
 
+
+export const sendQuestionInfo = (
+	quesUserID, title, description
+) => {
+	return fetch(`/question`, {
+		method: 'POST',
+		body: JSON.stringify({quesUserID,title, description}),
+		headers: new Headers({
+			'content-type': 'application/json'
+		})
+	})
+	.then(response => {
+		if (response.ok) {
+			return response.json();
+		} else {
+			return Promise.reject('fetch-error !!!');
+		}
+	});
+};
+
 export const getQuestions = () => {
   return fetch(`/questions`, {
     method: 'GET'

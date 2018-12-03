@@ -115,6 +115,21 @@ app.post('/answer', (req, res) => {
 	console.log(AllQuestions);
 })
 
+
+app.post('/question', (req, res) => {
+	const{quesUserID, title, description} = req.body;
+	const qid = createQID();
+	let ansIDs = [];
+	AllQuestions.push({qid, quesUserID, title, description, ansIDs});
+	for(let i = 0; i < users.length; i++){
+		if(users[i].uid === quesUserID){
+			users[i].questionIDs.push(qid);
+		}
+	}
+	console.log(answers);
+	console.log(AllQuestions);
+})
+
 app.post('/signup/:username', (req, res) => {
 	const {username, password, action} = req.body;
 	if(action === 'signup'){
