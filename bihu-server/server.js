@@ -131,8 +131,9 @@ app.post('/signup/:username', (req, res) => {
 	if(action === 'signup'){
 		if(!usernameOccupied({username})){
 			const uid = createUID();
-			const q = [];
-			users.push({uid, username, password, q});
+			const questionIDs = [];
+			users.push({uid, username, password, questionIDs});
+			log(`signup success: ${username}, ${password}, ${action}`);
 			res.json({userID: uid, username: username})
 		}
 		else{
