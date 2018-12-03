@@ -26,7 +26,7 @@ function b() {
 }
 
 function c() {
-	let count = 3;
+	let count = 4;
 	return function () {
 		return count++;
 	};
@@ -52,23 +52,23 @@ const AllQuestions = [
 	{
 		"qid": 0,
 		"quesUserID": 0,
-		"title": "question title1",
-		"description": "what the question is",
-		"ansIDs": [0]
+		"title": "Which programming language is the best?",
+		"description": "I think PHP is the best language, anyone disagree?",
+		"ansIDs": [0,1]
 	},
 	{
 		"qid": 1,
 		"quesUserID": 1,
-		"title": "question title2",
-		"description": "what the question is",
-		"ansIDs": [1]
+		"title": "What should I prepare for interview?",
+		"description": "I want to find a job. Please help me!",
+		"ansIDs": [2]
 	},
 	{
 		"qid": 2,
 		"quesUserID": 1,
-		"title": "question title3",
-		"description": "what the question is",
-		"ansIDs": []
+		"title": "I want to learn React, please give me some advice?",
+		"description": "React is awesome, so I really want to learn. Any suggestion?",
+		"ansIDs": [3]
 	}
 ]; 
 
@@ -76,17 +76,22 @@ const answers = [
 	{
 		"aid":0,
 		"ansUserID": 0,
-		"content": "this is an answer"
+		"content": "No! JavaScript is the best! "
 	},
 	{
 		"aid":1,
 		"ansUserID": 1,
-		"content": "this is two answer"
+		"content": "Agree!"
 	},
 	{
 		"aid":2,
 		"ansUserID": 1,
-		"content": "this is third answer"
+		"content": "Practice coding. Practice makes perfect. Good luck!"
+	},
+	{
+		"aid":3,
+		"ansUserID": 0,
+		"content": "Please take info6250, this is the best course that I have ever taken."
 	}
 ]; 
 

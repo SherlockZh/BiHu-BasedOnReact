@@ -86,7 +86,7 @@ class App extends Component {
     this.pollAnswers();
     this.pollUserInfo();
 
-    setTimeout(this.pollAll, 5000);
+    setTimeout(this.pollAll, 1000);
   }
 
   pollQuestions(){
