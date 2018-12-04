@@ -49,6 +49,7 @@ class App extends Component {
     this.updateQuestionDesc = this.updateQuestionDesc.bind(this);
     this.updateQuestionTitle = this.updateQuestionTitle.bind(this);
     this.sendQuestion = this.sendQuestion.bind(this);
+    this.executeLogout = this.executeLogout.bind(this);
   }
 
   componentDidMount() {
@@ -80,6 +81,27 @@ class App extends Component {
     sendUserPass(this.state.tempUsername, this.state.tempPassword, 'login')
     .then(this.updateUserInfo);
 
+  }
+
+  executeLogout(){
+    this.setState({
+      user:'',
+      userID: Number,
+      user: '',
+      password: '',
+      tempUsername: '',
+      tempPassword: '',
+
+      loginDirectly : false,
+
+      questionID: -1,
+
+      allQuestions: [],
+      users:[],
+      answers: [],
+      questionTitle:'',
+      questionDesc:''
+    });
   }
 
   pollAll(){
@@ -159,6 +181,8 @@ class App extends Component {
     alert('Question has been added!');
   }
 
+
+
   render() {
     const isLoggedIn = !!this.state.user;
     const hasQuestionID = !(this.state.questionID === -1);
@@ -176,8 +200,8 @@ class App extends Component {
           changeBtnText={this.changeBtnText}
         />}
 
-        <header className="App-header"></header>
-        {isLoggedIn && <Header/>}
+        <header className="App-header" ></header>
+        {isLoggedIn && <Header executeLogout={this.executeLogout}/>}
         
         {isLoggedIn && !hasQuestionID && 
           <Questions 

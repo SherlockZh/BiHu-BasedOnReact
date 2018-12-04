@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './images/bihulogo.jpg';
 import './Header.css'
-const Header = () => {
+const Header = ({executeLogout}) => {
   return(
   <div>
     <header className="AppHeader">
@@ -21,6 +21,8 @@ const Header = () => {
 				/>
         <button type="submit" className="Search-button">GO</button>
       </div>
+      <button className="logout-button" onClick={executeLogout}>Logout</button>
+
     </header>
   </div>
   );

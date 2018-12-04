@@ -80,3 +80,11 @@ input[type="text"] {
   }
 
 
+.logout-button{
+  float: right;
+  margin-top: 20px;
+  height: 25px;
+  background-color: #0084ff;
+  color: #fff;
+  font-size: 14px;
+}
