@@ -5,17 +5,17 @@ const Questions = ({
   allQuestions, handleClick, users, updateQuestionTitle, updateQuestionDesc, sendQuestion}
   ) => {
   const questionList = allQuestions.map(question => (
-    <div key={question.qid} className="each-question">
+    <div key={question.qid} className="question-list">
+      <div className="question-user">{users[question.quesUserID].username}</div> 
       <div
-        className="title question-title"
-        onClick={() => handleClick(question.qid)}
-      >
+        className="question-title"
+        onClick={() => handleClick(question.qid)}>
         {question.title}
       </div>
-      <div className="answer-user">
-        Posted by {users[question.quesUserID].username}
+      <div className="question-description">
+        {question.description}
       </div>
-      <div className="question-description">{question.description}</div>
+
     </div>
   ));
 
@@ -27,17 +27,19 @@ const Questions = ({
       
       {questionList}
       <div>
-        <input type="text" placeholder="Add your title" size="40" onChange={updateQuestionTitle}/>
+        
       </div>
-      <div>
+      <div className="answer-question-textareas">
+        <input type="text" placeholder="Add your title" className="questionBox-title" onChange={updateQuestionTitle}/>
         <textarea
           className="questionBox-textArea"
-          rows="4"
-          cols="80"
-          placeholder="Add your answer"
+          placeholder="Add your question"
           onChange={updateQuestionDesc}
         />
-        <button onClick={sendQuestion}>Add a question</button>
+        <button onClick={sendQuestion} className="question-button">Add a question</button>
+      </div>
+      <div>
+        
       </div>
     </div>
   );

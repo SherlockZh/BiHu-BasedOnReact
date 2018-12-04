@@ -1,3 +1,20 @@
 .answerBox-textArea {
     border: 1px solid #888; 
+    margin-top: 15px;
+    margin: 15px 0px 0px; 
+    width: 1175px;
+    height: 135px;
+    font-size: 18px;
 }
+
+.add-answer-button{
+    float: right;
+    height: 39px;
+    width: 97px;
+    font-size: 18px;
+    color: #fff;
+    border: none;
+    background-color: #0084ff;
+
+}
+

@@ -1,0 +1,42 @@
+.question-area{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.answer-user{
+  font-weight:bold;
+  font-size: 25px;
+}
+
+
+.answer-button{
+  float: right;
+  color: #0084ff;
+  border-color: #0084ff;
+  height: 39px;
+  width: 97px;
+  font-size: 14px;
+  
+}
+
+.each-question{
+  margin-top: 15px;
+}
+
+.answer-content{
+  font-size: 18px;
+}
+
+.return-to-QuestionPage{
+  font-size: 19px;
+  border: none;
+  color: #0084ff;
+}
+
+.each-question{
+  border-color: darkgray;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}

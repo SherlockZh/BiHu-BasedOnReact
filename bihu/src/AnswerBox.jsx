@@ -32,12 +32,10 @@ class AnswerBox extends Component {
       <div>
         <textarea
           className="answerBox-textArea"
-          rows="8"
-          cols="100"
           placeholder="Add your answer"
           onChange={this.updateTempAnswerText}
         />
-        <button onClick={this.sendAnswer}>Add</button>
+        <button className="add-answer-button" onClick={this.sendAnswer}>Add</button>
       </div>
     );
   }

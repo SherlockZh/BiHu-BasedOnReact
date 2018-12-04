@@ -3,6 +3,7 @@ import Signup from './Signup';
 import Header from './Header';
 import Questions from './Questions';
 import Answers from './Answers'
+import './App.css'
 
 import {
   sendUserPass,
@@ -196,6 +197,7 @@ class App extends Component {
           answers={this.state.answers}
           userID={this.state.userID}
           handleClick = {this.handleClick} 
+          users={this.state.users}
           />
         }
       </div>
