@@ -1,5 +1,5 @@
 ## Project: BiHu
-This a Q&A website. User can pull questions and answers for every question.
+This a Q&A website. User can post questions and add answers for every question.
 
 ## Instruction
 
@@ -15,7 +15,7 @@ This a Q&A website. User can pull questions and answers for every question.
 1. React
 2. Express
 3. body-parser
-
+4. nodemon
 
 ## RESTful APIs
 1. GET
