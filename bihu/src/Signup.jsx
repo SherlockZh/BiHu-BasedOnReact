@@ -19,10 +19,9 @@ const Signup = ({
 			<div className="SignContainer" >
 				<img className="bihulogo" src={bihulogo} alt="bihulogo"/>
 				<div className="slogan">Welcome to bihu to see another world!</div>
-				{/* {<div className="tip">Invalid Username or Password! Please Try Again.</div>} */}
 					<div className="inputs">
 						<input 
-							className='input'
+							className="input"
 							onChange={updateTempUsername}
 							id="username" 
 							type="text" 
@@ -30,7 +29,7 @@ const Signup = ({
 							value={username}
 						/>
 						<input 
-							className='input'
+							className="input"
 							onChange={updateTempPassword}
 							id="password" 
 							type="password" 

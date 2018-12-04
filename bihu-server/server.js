@@ -142,6 +142,7 @@ app.post('/signup/:username', (req, res) => {
 			res.json({userID: uid, username: username})
 		}
 		else{
+			res.status(409).end();
 			log(`${username} is occupied`);
 		}
 	}
@@ -151,10 +152,10 @@ app.post('/signup/:username', (req, res) => {
 			log(`login success: ${username}, ${password}, ${action}`);
 			res.json({userID: userID, username: username});
 		}
-		res.status(404).end();
+		res.status(409).end();
 	}
 	else{
-		res.status(404).end();
+		res.status(409).end();
 	}
 });
 
