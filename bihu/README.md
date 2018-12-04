@@ -1,7 +1,7 @@
-##Project: BiHu
+## Project: BiHu
 This a Q&A website. User can pull questions and answers for every question.
 
-##Instruction
+## Instruction
 
 1. run `npm install` in both `/bihu` and `bihu-server` directory.
 2. run `nodemon server` in `bihu-server` to start the server
@@ -11,7 +11,7 @@ This a Q&A website. User can pull questions and answers for every question.
 `username: sher password: 1`
 5. You can create your own username and password in signup page.
 
-##Dependency
+## Dependency
 1. React
 2. Express
 3. body-parser
