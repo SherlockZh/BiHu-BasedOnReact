@@ -33,7 +33,7 @@ const Signup = ({
 							className='input'
 							onChange={updateTempPassword}
 							id="password" 
-							type="text" 
+							type="password" 
 							placeholder="password"
 							value={password}
 						/>
